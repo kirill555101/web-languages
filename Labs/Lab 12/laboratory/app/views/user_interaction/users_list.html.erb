@@ -1,0 +1,13 @@
+<table id="add_table">
+    <caption><h1>Список пользователей</h1></caption>
+    <tr>
+        <td class="col">Имя</td>
+        <td class="col">Email</td>
+    </tr>
+    <% @users.each do |user| %>
+        <tr>
+            <td class="col"><%= user.name %></td>
+            <td class="col"><%= user.email %></td>
+        </tr>
+    <% end %>
+</table>

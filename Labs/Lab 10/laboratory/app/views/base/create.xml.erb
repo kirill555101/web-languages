@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transformer.xslt"?>
+<params>
+    <% if @has_elements %>
+        <array><%= @array %></array>
+        <all_segments><%= @all_segments %></all_segments>
+        <max_segment><%= @max_segment %></max_segment>
+        <count><%= @count %></count>
+    <% else %>
+        <array><%= @array %></array>
+        <all_segments></all_segments>
+        <max_segment>Нет отрезков</max_segment>
+        <count></count>
+    <% end %>
+</params>

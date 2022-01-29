@@ -1,0 +1,46 @@
+<%= form_tag("/create", :method => "post") do %>
+    <table id="add_form">
+        <caption><h1>Форма ввода</h1></caption>
+        <tr>
+            <td width="40%">Введите число n</td>
+            <td><%= text_field_tag :number, nil, class: "enter" %></td>
+        </tr>
+        <tr>
+            <td>Введите n чисел через пробел</td>
+            <td><%= text_field_tag :str, nil, class: "enter" %></td>
+        </tr>
+        <tr>
+            <td><%= submit_tag "Найти", class: "btn" %></td>
+            <td><span style="color: red;"></span></td>
+        </tr>
+        <% if @user.name == "admin" %>
+            <tr>
+                <td><a href="/show_results_in_xml" style="font-size: medium;">Показать результаты в XML</a></td>
+                <td><a href="/show_users_in_xml" style="font-size: medium;">Показать пользователей в XML</a></td>
+            </tr>
+        <% end %>
+    </table>
+<% end %>
+
+<table id="add_table">
+    <caption><h1>Таблица вывода</h1></caption>
+    <tr>
+        <td class="col">Входные данные</td>
+        <td class="col">Полученные отрезки</td>
+        <td class="col">Максимальный отрезок</td>
+        <td class="col">Количество</td>
+    </tr>
+    <% @result.each do |item| %>
+        <tr>
+            <% if item.all_segments != 'Нет отрезков' %>
+                <td class="col"><%= item.array %></td>
+                <td class="col"><%= item.all_segments %></td>
+                <td class="col"><%= item.max_segment %></td>
+                <td class="col"><%= item.count %></td>
+            <% else %>
+                <td class="col"><%= item.array %></td>
+                <td colspan="3" id="error_cell">Нет отрезков</td>
+            <% end %>
+        </tr>
+    <% end %>
+</table>

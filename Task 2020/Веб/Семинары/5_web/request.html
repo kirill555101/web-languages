@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+    <body>
+
+        <div id="resultSync"></div>
+        <div id="resultAsync"></div>
+
+        <!--         Задание: 
+        1. дописать обработчик асинхронного запроса. вывести результат.
+        2. Реализовать синхронный запрос. -->
+        
+        <script>
+            var xmlhttp = new XMLHttpRequest();
+            var url_base = "http://192.168.1.176/~fckm"; 
+
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) { // readyState = 4 означает, что запрос завершился; status = 200 означает, что завершился удачно
+                    var myArr = JSON.parse(this.responseText); // Стандартный метод для разбора JSON-строк
+                    // myFunction(myArr);
+                }
+            };
+
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send(); // Получить Allow-Control-Allow-Origin ошибку
+
+            function myFunction(arr) {
+
+            }
+        </script>
+
+    </body>
+</html>
+

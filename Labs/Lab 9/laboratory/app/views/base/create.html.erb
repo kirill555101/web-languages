@@ -1,0 +1,40 @@
+<%= form_tag("/create", :method => "post") do %>
+    <table id="add_form">
+    <caption><h1>Форма ввода</h1></caption>
+        <tr>
+            <td width="40%">Введите число n</td>
+            <td><%= text_field_tag :number, nil, class: "enter" %></td>
+        </tr>
+        <tr>
+            <td>Введите n чисел через пробел</td>
+            <td><%= text_field_tag :str, nil, class: "enter" %></td>
+        </tr>
+        <tr>
+            <td><%= button_tag "Найти", class: "btn", onclick: "return send()", type: "button" %></td>
+            <td><span style="color: red;"><%= @error %></span></td>
+        </tr>
+    </table>
+<% end %>
+
+<table id="add_table">
+    <caption><h1>Таблица вывода</h1></caption>
+    <tr>
+        <td class="col">Входные данные</td>
+        <td class="col">Полученные отрезки</td>
+        <td class="col">Максимальный отрезок</td>
+        <td class="col">Количество</td>
+    </tr>
+    <% unless @array.empty? %>
+        <tr>
+            <% if @has_elements %>
+                <td class="col"><%= @array %></td>
+                <td class="col"><%= @all_segments %></td>
+                <td class="col"><%= @max_segment %></td>
+                <td class="col"><%= @count %></td>
+            <% else %>
+                <td class="col"><%= @array %></td>
+                <td colspan="3" id="error_cell">Нет отрезков</td>
+            <% end %>
+        </tr>
+    <% end %>
+</table>

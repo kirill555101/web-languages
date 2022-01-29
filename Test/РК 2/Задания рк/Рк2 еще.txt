@@ -1,0 +1,13 @@
+С клавиатуры вводится последовательность чисел через пробел. 
+Необходимо вычислить сумму модулей элементотв, встречающихся после первого отрицательного элемента, 
+и вывести ее на печать.
+
+array = [1, 2, 3, -5, 0, 1, -2, -3, 4].each_with_index
+    
+min_index = array.find{|element| element[0] < 0}[1]
+
+sum = array.select {|element| element[1] > min_index }.inject(0) {|acc, element| acc + element[0].abs }
+
+puts sum
+
+добавь проверки!

@@ -1,0 +1,41 @@
+// Place all the styles related to the Base controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#add_form {
+    width: 50%;
+    margin: auto;
+    padding-left: 170px;
+}
+
+td {
+    font-size: 15pt;
+}
+
+.enter {
+    width: 200px;
+    height: 15pt;
+}
+
+#add_table {
+    width: 70%;
+    border: 1px solid black;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.col {
+    border: 1px solid black;
+    width: 50%;
+    text-align:center;
+}
+
+.btn {
+    width: 150px;
+}
+
+#error_cell {
+    border: 1px solid black;
+    color: red; 
+    text-align:center
+}

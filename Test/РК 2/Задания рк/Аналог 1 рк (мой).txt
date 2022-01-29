@@ -1,0 +1,31 @@
+Дан массив чисел arr. Найти номер первого кратного 71 элемента и 
+поместить его на место минимального элемента.
+
+def is_integer?(element)
+    element.to_i.to_s == element
+ end
+
+array = gets
+    .split
+    .select {|element| is_integer? element}
+    .map(&:to_i)
+
+if array.length == 0
+    puts "Введите массив, состоящий из чисел!"
+else    
+    index = array
+        .each_with_index
+        .select{|element| element[0] % 71 == 0}
+        .first
+    
+    if index == nil
+        puts "В данном массиве нет чисел, кратных 71"
+    else
+        array[array.index(array.min)] = index[1]
+
+        string = array.join(", ")
+        puts string
+    end
+end
+
+добавь проверки!

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Лабораторная работа</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header style="font-size: 1.17em;">
+      <% unless  @user == nil %>
+        Добро пожаловать, <span style="color:blue"><%= @user.name %></span>!
+        <a href="/">Главная страница</a>
+        <% if @user.name == "admin" %>
+          <a href="/users_list">Список пользователей</a>
+        <% end %>
+        <a href="/logout">Выйти</a>
+      <% else %>
+        <a href="/login">Войдите,</a> чтобы получить доступ к сайту
+      <% end %>
+      <hr>
+    </header>
+    <%= yield %>
+  </body>
+</html>

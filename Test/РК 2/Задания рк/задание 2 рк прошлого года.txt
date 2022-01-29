@@ -1,0 +1,39 @@
+Дан массив чисел arr_r. 
+Определить сумму нечётных элементов массива и поместить ее на место последнего элемента массива, 
+индекс которого делится на k без остатка, где k-введённое с клавиатуры значение.
+
+def is_integer?(element)
+    element.to_i.to_s == element
+ end
+
+print "Введите массив: "
+array = gets
+    .split
+    .select{|element| is_integer? element}
+    .map(&:to_i)
+
+print "Введите k: "
+k = gets.to_i
+if k == 0
+    puts "Вы ввели 0"
+end
+
+if array.length == 0
+    puts "Введите массив, состоящий из чисел!"
+else    
+    sum = array
+        .select(&:odd?)
+        .inject(:+)
+    
+    last_index = array
+        .each_index
+        .select {|index| index % k == 0 }
+        .last
+    
+    array[last_index] = sum
+    
+    string = array.join(", ")
+    puts string
+end
+
+добавь проверки!

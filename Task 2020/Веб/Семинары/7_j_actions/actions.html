@@ -1,0 +1,57 @@
+<!-- Задание: 
+1. модифицировать код таким образом, чтобы при наведении мышью на первый input background-color окрашивался в красный, а на второй - выводилось соответствующее сообщение. прим.: см. http://www.w3schools.com/jquery/jquery_ref_events.asp
+2. Дораскрасить таблицу: пусть чётные столбцы (odd) будут иметь синий фон. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $("input").focus(function(){
+            $(this).css("background-color", "#cccccc");
+        });
+        $("input").blur(function(){
+            $(this).css("background-color", "#ffffff");
+        });
+        
+        $("tr:even").css("background-color", "yellow");
+    });
+  </script>
+</head>
+<body>
+
+  Name: <input type="text" name="fullname"><br>
+  Email: <input type="text" name="email">
+
+
+  <table border="1">
+    <tr>
+      <th>Company</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Berglunds snabbköp</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Mexico</td>
+    </tr>
+    <tr>
+      <td>Ernst Handel</td>
+      <td>Austria</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>UK</td>
+    </tr>
+  </table>
+
+</body>
+</html>

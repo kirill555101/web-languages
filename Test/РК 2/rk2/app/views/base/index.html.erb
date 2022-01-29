@@ -1,0 +1,19 @@
+<h2>ИУ6-34Б - Каташинский Кирилл</h2>
+<p>
+    С клавиатуры вводится последовательность чисел через пробел. 
+    Найти все числа, меньшие среднего арифметического последовательности, и вывести их на печать.
+</p>
+<%= form_with(url: "/create.json", method: "post", id: "add") do %>
+    <table>
+        <tr>
+            <td>Введите массив</td>
+            <td><%= text_field_tag :array, "1 -2 3 -5 10 3 5" %></td>
+        </tr>
+        <tr>
+            <td><%= submit_tag "Ввод" %></td>
+            <td><%= button_tag "Очистить", type: "button", onclick: "clearResult()" %></td>
+        </tr>
+    </table>
+<% end %>
+<br>
+<strong id="result"></strong>

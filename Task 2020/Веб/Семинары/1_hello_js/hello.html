@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head><meta charset="utf-8" /></head>
+  <body>
+
+  <h1>My First JavaScript</h1>
+
+  <button type="button"
+    onclick="document.getElementById('demo').innerHTML = Date()">
+      Click me to display Date and Time.</button>
+
+  <p id="demo"></p>
+
+  <!-- Задание: добавить ещё одну кнопку, по нажатию на которую будет выведена информация об агенте и используемый клиентом язык.
+  см. https://developer.mozilla.org/ru/docs/Web/API/Navigator -->
+  <button type="button"
+    onclick="document.getElementById('agent').innerHTML = window.navigator.userAgent">
+      Click me to display Agent.</button>
+  <p id="agent"></p>
+
+  <button type="button"
+    onclick="document.getElementById('language').innerHTML = window.navigator.language">
+      Click me to display Language.</button>
+  <p id="language"></p>
+
+  </body>
+</html>
